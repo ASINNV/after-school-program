@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { connect } from "react-redux";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft, faPhone } from '@fortawesome/free-solid-svg-icons';
 
 
 class MainSchedule extends Component {
@@ -113,7 +113,8 @@ class App extends Component {
               <h1 className="title">After School Program</h1>
             </div>
 
-            <a href="/" className="quick-contact link">Call us: (707) 882-2131</a>
+            <a href="/" className="hide-mobile quick-contact link">Call us: (707) 882-2131</a>
+            <a href="/" className="hide-desktop quick-contact link"><FontAwesomeIcon icon={faPhone} className="call-now-icon"/></a>
 
           </div>
 

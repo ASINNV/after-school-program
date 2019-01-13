@@ -66,6 +66,9 @@ h3 {
   font-size: 1.8em;
   font-weight: 700;
 }
+.hide-desktop {
+  display: none;
+}
 .link {
   text-decoration: none;
   font-weight: 600;
@@ -396,4 +399,97 @@ textarea.input-field {
 }
 .school-info {
 
+}
+
+/* SMALL MOBILE SCREENS */
+/* SMALL MOBILE SCREENS */
+
+@media screen and (min-width: 320px) and (max-width: 600px) {
+  h3 {
+    line-height: 1.3em;
+  }
+  .hide-mobile {
+    display: none;
+  }
+  .hide-desktop {
+    display: block;
+  }
+  .page-one {
+    background-size: cover;
+    padding-bottom: 40px;
+  }
+  .back-button-text {
+    display: none;
+  }
+  .title-container {
+    text-align: center;
+  }
+  .title {
+    font-size: 2em;
+  }
+  .subtitle {
+    font-size: 1.3em;
+  }
+  .header {
+    margin: 20px;
+    align-items: flex-end;
+  }
+  .activity-section {
+    height: auto;
+    width: auto;
+    position: relative;
+    flex-direction: column;
+    background: #339696;
+    margin: 0 5px;
+    padding: 20px;
+  }
+  .schedule {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    margin: 20px auto;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .schedule::before {
+    display: none;
+  }
+  .blurb {
+    width: auto;
+    overflow: auto;
+  }
+  .schedule-toggle {
+    font-size: 1em;
+  }
+  .page-two {
+    padding: 40px 5px;
+  }
+  .contact-section {
+    height: auto;
+    width: 100%;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .contact-form-container {
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .contact-form-container::before {
+    display: none;
+  }
+  .contact-form-inputs {
+    padding: 10px;
+  }
+  .input-field {
+    width: 100%;
+  }
+  .contact-blurb-container {
+    margin: 0;
+    padding: 0 10px;
+  }
 }
