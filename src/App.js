@@ -120,7 +120,7 @@ class App extends Component {
           <div className="activity-section">
             <div className="blurb">
               <h3 className="blurb-header">It's like school, but not!</h3>
-              <p className="blurb-body">By attending our After School Program, your kid(s) will learn about completing assignments early while collaborating with peers during study time. Your child(ren) will also have the chance to participate in a host of engaging activities including computer class, yoga, art, music, sports, landscaping & gardening, and more!</p>
+              <p className="blurb-body">By attending our After School Program, your kid(s) will learn about completing assignments early while collaborating with peers during study time. Your child(ren) will also have the chance to participate in a host of engaging activities including computer class, yoga, art, music, sports, landscaping, gardening, and more!</p>
             </div>
             <div className="schedule">
               <div className="schedule-header">
