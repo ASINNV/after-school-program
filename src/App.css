@@ -1,32 +1,399 @@
-.App {
-  text-align: center;
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+
+/* HOME PAGE STYLES*/
+/* HOME PAGE STYLES*/
+
+h1 {
+  font-size: 3em;
+  margin: 10px 0;
+}
+h2 {
+  font-size: 2em;
+}
+h3 {
+  font-size: 1.8em;
+  font-weight: 700;
+}
+.link {
+  text-decoration: none;
+  font-weight: 600;
+  color: #339696;
+}
+.main {
+  display: inline-block;
+  width: 100%;
+  font-family: "Myriad Pro", "PT Sans";
+}
+.page-one {
+  background: url('images/smiling-children.jpg') no-repeat top center;
+  padding-bottom: 80px;
+}
+.header {
+  margin: 30px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.back-button {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity .12s ease-in-out, transform .12s ease-in-out;
+}
+.back-button:hover {
+  opacity: .75;
+  transform: translateX(-4px);
+}
+.back-button-chevron {
+  font-size: 1.7em;
+  margin-right: 10px;
+}
+.back-button-text {
+  font-size: 1.4em;
+}
+.title-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.title {
+  color: #339696;
+  font-weight: 700;
+}
+.subtitle {
+  color: #963333;
+  font-weight: 700;
+}
+.quick-contact {
+  font-size: 1.4em;
+  transition: opacity .12s ease-in-out, transform .12s ease-in-out;
+}
+.quick-contact:hover {
+  opacity: .75;
+  transform: scale(1.05);
 }
 
-.App-link {
-  color: #61dafb;
+/* Page One | Activity Section */
+/* Page One | Activity Section */
+
+.activity-section {
+  position: relative;
+  height: 409px;
+  width: 1024px;
+  background: #339696;
+  margin: 0 auto;
+  padding: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 30px solid #808080;
+  border-radius: 8px;
+}
+.blurb {
+  width: 575px;
+  overflow: scroll;
+  color: #fff;
+}
+.blurb-header {
+  padding: 20px 0;
+}
+.blurb-body {
+  font-size: 1.3em;
+  font-weight: 600;
+  line-height: 2em;
+}
+.schedule {
+  position: absolute;
+  right: 40px;
+  width: 350px;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  /*overflow: hidden;*/
+  box-shadow: -5px -5px 10px rgba(0,0,0,0.2);
+  z-index: 0;
+}
+.schedule::before {
+  position: absolute;
+  bottom: -30px;
+  left: -30px;
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-top: 30px solid #505050;
+  border-right: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  z-index: -1;
+}
+.schedule-header {
+  background: #fff;
+  color: #963333;
+  text-align: center;
+  padding: 20px 0;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.schedule-toggle {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: 600;
+  line-height: 1.5em;
+}
+.day-toggle {
+  background: #e3e3e3;
+  padding: 10px 0;
+  cursor: pointer;
+  color: #339696;
+  font-weight: 700;
+  /*transition: color .12s ease-in-out;*/
+}
+.day-toggle:hover {
+  color: #1fa8a8;
+}
+.toggle-main {
+  width: 58%;
+}
+.toggle-alt {
+  width: 42%;
+}
+.toggle-active {
+  background: #c9c9c9 !important;
+  color: #478080 !important;
+  box-shadow: inset 0px 0px 10px #aaa;
+  /*transition: box-shadow .12s ease-in-out, background .12s ease-in-out, color .12s ease-in-out;*/
+}
+.schedule-info {
+  display: flex;
+  width: 100%;
+  font-size: 1.5em;
+  line-height: 2em;
+  font-weight: 700;
+  background: #808080;
+  background: linear-gradient(#808080, #707070);
+  color: #fff;
+}
+table {
+  margin: 20px;
+  width: 100%;
+}
+tr {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Transition | Dividing Line */
+/* Transition | Dividing Line */
+
+.dividing-line {
+  background: #808080;
+  height: 20px;
+  width: 100%;
+}
+
+/* Page Two | Contact Section */
+/* Page Two | Contact Section */
+
+.page-two {
+  background: url('images/point-arena.jpg') no-repeat center center;
+  background-size: cover;
+  padding: 80px 0;
+}
+
+.contact-section {
+  position: relative;
+  width: 1024px;
+  height: 510px;
+  background: #963333;
+  color: #fff;
+  margin: 0 auto;
+  padding: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 30px solid #808080;
+  border-radius: 8px;
+}
+.contact-form-container {
+  position: absolute;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  /*overflow: hidden;*/
+  box-shadow: 5px -5px 10px rgba(0,0,0,0.2);
+  z-index: 0;
+}
+.contact-form-container:before {
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-top: 30px solid #505050;
+  border-right: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  z-index: -1;
+}
+.contact-form-header {
+  background: #fff;
+  color: #963333;
+  text-align: center;
+  padding: 20px 0;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.contact-form-inputs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px;
+  background: #808080;
+  background: linear-gradient(#808080, #707070);
+  color: #fff;
+}
+.input-group {
+  margin: 10px 0;
+}
+.input-label {
+  font-size: 1.3em;
+  line-height: 1.5em;
+  font-weight: 700;
+  cursor: default;
+}
+.input-field {
+  width: 350px;
+  font-size: 1em;
+  line-height: 1.5em;
+  font-weight: 700;
+  color: #808080;
+  border: none;
+  border-radius: 8px;
+  padding: 7px 10px;
+  resize: none;
+}
+textarea.input-field {
+  height: 88px;
+}
+.submit-button {
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px 0;
+  margin: 10px 0;
+  color: #808080;
+  text-align: center;
+  font-size: 1.3em;
+  line-height: 1.5em;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: color .12s ease-in-out, box-shadow .12s ease-in-out;
+}
+.submit-button:hover {
+  color: #666;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+.submit-button:active {
+  color: #808080;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.contact-blurb-container {
+  margin-left: 40%;
+  padding-left: 50px;
+}
+.contact-blurb-header {
+  padding: 20px 0;
+}
+.contact-blurb-body {
+  font-size: 1.3em;
+  font-weight: 600;
+  line-height: 2em;
+}
+.contact-info-group {
+  margin: 20px 0;
+}
+.contact-label {
+  font-weight: 600;
+  line-height: 1.5em;
+  color: #B0B0B0;
+  padding-bottom: 10px;
+}
+.contact-info {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Footer | Copyright Section */
+/* Footer | Copyright Section */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  padding: 10px 40px;
+  background: #808080;
+  color: #505050;
+  font-size: .8em;
+}
+.school-info {
+
 }
