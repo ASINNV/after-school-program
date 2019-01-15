@@ -6,6 +6,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
+  hyphens: auto;
 }
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -66,8 +67,20 @@ h3 {
   font-size: 1.8em;
   font-weight: 700;
 }
+table {
+  margin: 20px;
+  width: 100%;
+}
+tr {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .hide-desktop {
   display: none;
+}
+.hide-mobile {
+  display: block;
 }
 .link {
   text-decoration: none;
@@ -101,8 +114,8 @@ h3 {
   transform: translateX(-4px);
 }
 .back-button-chevron {
-  font-size: 1.7em;
-  margin-right: 10px;
+  font-size: 1.6em;
+  margin: 0 8px 4px 0;
 }
 .back-button-text {
   font-size: 1.4em;
@@ -230,15 +243,6 @@ h3 {
   background: #808080;
   background: linear-gradient(#808080, #707070);
   color: #fff;
-}
-table {
-  margin: 20px;
-  width: 100%;
-}
-tr {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
 
 /* Transition | Dividing Line */
@@ -394,7 +398,7 @@ textarea.input-field {
   height: 40px;
   padding: 10px 40px;
   background: #808080;
-  color: #505050;
+  color: #E3E3E3;
   font-size: .8em;
 }
 .school-info {
@@ -417,6 +421,23 @@ textarea.input-field {
   .page-one {
     background-size: cover;
     padding-bottom: 40px;
+  }
+  .back-button, .hide-desktop.quick-contact {
+    display: flex;
+    align-items: center;
+    width: 50px;
+    height: 40px;
+    background: #F3F3F3;
+    border: 1px solid #DEDEDE;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);
+    justify-content: center;
+    border-radius: 50%;
+  }
+  .back-button:hover, .hide-desktop.quick-contact:hover {
+    transform: scale(0.95);
+  }
+  .back-button-chevron {
+    margin: 0;
   }
   .back-button-text {
     display: none;
@@ -441,7 +462,7 @@ textarea.input-field {
     flex-direction: column;
     background: #339696;
     margin: 0 5px;
-    padding: 20px;
+    padding: 10px;
   }
   .schedule {
     position: relative;
@@ -460,22 +481,29 @@ textarea.input-field {
     overflow: auto;
   }
   .schedule-toggle {
-    font-size: 1em;
+    font-size: 1.1em;
   }
   .page-two {
-    padding: 40px 5px;
+    padding: 40px 0;
   }
   .contact-section {
     height: auto;
-    width: 100%;
-    padding: 10px;
+    width: auto;
+    position: relative;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    margin: 0 5px;
+    padding: 10px;
+    /*height: auto;*/
+    /*width: 100%;*/
+    /*padding: 10px;*/
+    /*flex-direction: column;*/
+    /*align-items: center;*/
+    /*justify-content: flex-start;*/
   }
   .contact-form-container {
     position: relative;
     width: 100%;
+    margin: 20px auto;
     border-radius: 8px;
     overflow: hidden;
   }
@@ -490,6 +518,18 @@ textarea.input-field {
   }
   .contact-blurb-container {
     margin: 0;
-    padding: 0 10px;
+    padding: 0;
+  }
+  .contact-info {
+    font-size: 1.2em;
+  }
+  .footer {
+    height: auto;
+    padding: 10px;
+    flex-direction: column;
+    text-align: center;
+  }
+  .school-info {
+    margin-bottom: 10px
   }
 }

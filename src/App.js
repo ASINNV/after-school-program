@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { connect } from "react-redux";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faPhone } from '@fortawesome/free-solid-svg-icons';
 
 
 class MainSchedule extends Component {
@@ -104,7 +104,7 @@ class App extends Component {
           <div className="header">
 
             <a className="back-button link" href="/">
-              <FontAwesomeIcon icon={faChevronLeft} className="back-button-chevron"/>
+              <FontAwesomeIcon icon={faArrowLeft} className="back-button-chevron"/>
               <p className="back-button-text">Go back to main website</p>
             </a>
 
@@ -145,6 +145,18 @@ class App extends Component {
         <div className="page-two">
 
           <div className="contact-section">
+            <div className="hide-desktop contact-blurb-container">
+              <h3 className="contact-blurb-header">Ready to Enroll?</h3>
+              <p className="contact-blurb-body">We're so glad to hear it! Please send us an email using the form on the left and we'll get back to you as soon as we can. If you'd rather give us a call, or send us an email directly, our information is the following:</p>
+              <div className="contact-info-group">
+                <p className="contact-label">PHONE</p>
+                <p className="contact-info">(707) 882-2131</p>
+              </div>
+              <div className="contact-info-group">
+                <p className="contact-label">EMAIL</p>
+                <p className="contact-info">info@arenaunionelementary.org</p>
+              </div>
+            </div>
             <div className="contact-form-container">
               <div className="contact-form-header">
                 <h3>Contact Us</h3>
@@ -166,7 +178,7 @@ class App extends Component {
 
               </div>
             </div>
-            <div className="contact-blurb-container">
+            <div className="hide-mobile contact-blurb-container">
               <h3 className="contact-blurb-header">Ready to Enroll?</h3>
               <p className="contact-blurb-body">We're so glad to hear it! Please send us an email using the form on the left and we'll get back to you as soon as we can. If you'd rather give us a call, or send us an email directly, our information is the following:</p>
               <div className="contact-info-group">
@@ -183,8 +195,8 @@ class App extends Component {
         </div>
 
         <div className="footer">
-          <p className="school-info">AUES | PO BOX 45 | 20 SCHOOL STREET | POINT ARENA, CA 95468 | 707.882.2131 | 707.882.3076 (FAX)</p>
-          <p className="copyright">{new Date().getFullYear()} &copy; Arena Union Elementary School</p>
+          <p className="footer-element school-info">AUES | PO BOX 45 | 20 SCHOOL STREET | POINT ARENA, CA 95468 | 707.882.2131 | 707.882.3076 (FAX)</p>
+          <p className="footer-element copyright">{new Date().getFullYear()} &copy; Arena Union Elementary School</p>
         </div>
 
       </div>
