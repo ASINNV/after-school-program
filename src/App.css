@@ -96,7 +96,7 @@ tr:nth-child(2n +1) {
 .main {
   display: inline-block;
   width: 100%;
-  font-family: "Myriad Pro", "PT Sans";
+  font-family: 'PT Sans', Sans-Serif;
 }
 .page-one {
   background: url('images/smiling-children.jpg') no-repeat top center;
@@ -117,7 +117,7 @@ tr:nth-child(2n +1) {
 }
 .back-button-chevron {
   font-size: 1.6em;
-  margin: 0 8px 4px 0;
+  margin-right: 8px;
 }
 .back-button-text {
   font-size: 1.4em;
@@ -565,7 +565,7 @@ textarea.input-field {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1025px) {
   .day-toggle:hover {
     color: #1fa8a8;
   }
