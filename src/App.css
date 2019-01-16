@@ -68,19 +68,25 @@ h3 {
   font-weight: 700;
 }
 table {
-  margin: 20px;
   width: 100%;
 }
 tr {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding: 10px 20px;
 }
-.hide-desktop {
-  display: none;
+tr:nth-child(2n +1) {
+  background: #888;
+}
+.hide-desktop, .hide-desktop-flex {
+  display: none !important;
 }
 .hide-mobile {
-  display: block;
+  display: block !important;
+}
+.hide-mobile-flex {
+  display: flex !important;
 }
 .link {
   text-decoration: none;
@@ -109,10 +115,6 @@ tr {
   text-decoration: none;
   transition: opacity .12s ease-in-out, transform .12s ease-in-out;
 }
-.back-button:hover {
-  opacity: .75;
-  transform: translateX(-4px);
-}
 .back-button-chevron {
   font-size: 1.6em;
   margin: 0 8px 4px 0;
@@ -124,6 +126,8 @@ tr {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  margin: 0 auto;
 }
 .title {
   color: #339696;
@@ -136,10 +140,6 @@ tr {
 .quick-contact {
   font-size: 1.4em;
   transition: opacity .12s ease-in-out, transform .12s ease-in-out;
-}
-.quick-contact:hover {
-  opacity: .75;
-  transform: scale(1.05);
 }
 
 /* Page One | Activity Section */
@@ -219,9 +219,6 @@ tr {
   font-weight: 700;
   /*transition: color .12s ease-in-out;*/
 }
-.day-toggle:hover {
-  color: #1fa8a8;
-}
 .toggle-main {
   width: 58%;
 }
@@ -231,14 +228,14 @@ tr {
 .toggle-active {
   background: #c9c9c9 !important;
   color: #478080 !important;
-  box-shadow: inset 0px 0px 10px #aaa;
+  box-shadow: inset 0px 0px 10px rgba(0,0,0,0.25);
   /*transition: box-shadow .12s ease-in-out, background .12s ease-in-out, color .12s ease-in-out;*/
 }
 .schedule-info {
   display: flex;
   width: 100%;
   font-size: 1.5em;
-  line-height: 2em;
+  line-height: 1.5em;
   font-weight: 700;
   background: #808080;
   background: linear-gradient(#808080, #707070);
@@ -314,7 +311,7 @@ tr {
   padding: 20px;
   background: #808080;
   background: linear-gradient(#808080, #707070);
-  color: #fff;
+  color: #bfbfbf;
 }
 .input-group {
   margin: 10px 0;
@@ -353,14 +350,6 @@ textarea.input-field {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   transition: color .12s ease-in-out, box-shadow .12s ease-in-out;
 }
-.submit-button:hover {
-  color: #666;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-}
-.submit-button:active {
-  color: #808080;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
 .contact-blurb-container {
   margin-left: 40%;
   padding-left: 50px;
@@ -379,7 +368,7 @@ textarea.input-field {
 .contact-label {
   font-weight: 600;
   line-height: 1.5em;
-  color: #B0B0B0;
+  color: #cc6361;
   padding-bottom: 10px;
 }
 .contact-info {
@@ -408,34 +397,47 @@ textarea.input-field {
 /* SMALL MOBILE SCREENS */
 /* SMALL MOBILE SCREENS */
 
-@media screen and (min-width: 320px) and (max-width: 600px) {
+@media screen and (min-width: 320px) and (max-width: 900px) {
   h3 {
     line-height: 1.3em;
   }
-  .hide-mobile {
-    display: none;
+  .hide-mobile, .hide-mobile-flex {
+    display: none !important;
   }
   .hide-desktop {
-    display: block;
+    display: block !important;
+  }
+  .hide-desktop-flex {
+    display: flex !important;
   }
   .page-one {
     background-size: cover;
     padding-bottom: 40px;
   }
-  .back-button, .hide-desktop.quick-contact {
+  .back-button, .quick-contact {
     display: flex;
     align-items: center;
-    width: 50px;
-    height: 40px;
+    width: 48%;
+    justify-content: space-around;
+    font-size: 1.4em;
     background: #F3F3F3;
-    border: 1px solid #DEDEDE;
+    padding: 10px;
     box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);
-    justify-content: center;
-    border-radius: 50%;
+    border-radius: 50px;
   }
-  .back-button:hover, .hide-desktop.quick-contact:hover {
+  .back-button:active, .quick-contact:active {
     transform: scale(0.95);
   }
+
+  .back-button-chevron, .call-now-icon {
+    width: 25px !important;
+    height: 25px !important;
+    margin: 0;
+  }
+  .mobile-header-button-text {
+    margin-top: 5px;
+  }
+
   .back-button-chevron {
     margin: 0;
   }
@@ -452,8 +454,14 @@ textarea.input-field {
     font-size: 1.3em;
   }
   .header {
-    margin: 20px;
+    margin: 20px 20px 0 20px;
     align-items: flex-end;
+  }
+  .mobile-header-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px 20px 20px;
   }
   .activity-section {
     height: auto;
@@ -462,7 +470,8 @@ textarea.input-field {
     flex-direction: column;
     background: #339696;
     margin: 0 5px;
-    padding: 10px;
+    padding: 15px;
+    border-radius: 20px;
   }
   .schedule {
     position: relative;
@@ -472,6 +481,7 @@ textarea.input-field {
     margin: 20px auto;
     border-radius: 8px;
     overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
   }
   .schedule::before {
     display: none;
@@ -492,13 +502,8 @@ textarea.input-field {
     position: relative;
     flex-direction: column;
     margin: 0 5px;
-    padding: 10px;
-    /*height: auto;*/
-    /*width: 100%;*/
-    /*padding: 10px;*/
-    /*flex-direction: column;*/
-    /*align-items: center;*/
-    /*justify-content: flex-start;*/
+    padding: 15px;
+    border-radius: 20px;
   }
   .contact-form-container {
     position: relative;
@@ -506,6 +511,7 @@ textarea.input-field {
     margin: 20px auto;
     border-radius: 8px;
     overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
   }
   .contact-form-container::before {
     display: none;
@@ -515,6 +521,10 @@ textarea.input-field {
   }
   .input-field {
     width: 100%;
+  }
+  .submit-button:active {
+    color: #808080;
+    box-shadow: 0 0px 0px rgba(0,0,0,0);
   }
   .contact-blurb-container {
     margin: 0;
@@ -531,5 +541,48 @@ textarea.input-field {
   }
   .school-info {
     margin-bottom: 10px
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+  .header {
+    width: 580px;
+    margin: 30px auto 10px auto;
+  }
+  .activity-section, .contact-section {
+    width: 580px;
+    margin: 0 auto;
+  }
+  .mobile-header-links {
+    width: 580px;
+    margin: 0 auto 20px auto;
+  }
+  .back-button, .quick-contact {
+    justify-content: center;
+  }
+  .mobile-header-button-text {
+    margin-left: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .day-toggle:hover {
+    color: #1fa8a8;
+  }
+  .back-button:hover {
+    opacity: .75;
+    transform: translateX(-4px);
+  }
+  .quick-contact:hover {
+    opacity: .75;
+    transform: scale(1.05);
+  }
+  .submit-button:hover {
+    color: #666;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  }
+  .submit-button:active {
+    color: #808080;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
 }

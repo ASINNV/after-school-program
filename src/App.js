@@ -103,9 +103,9 @@ class App extends Component {
 
           <div className="header">
 
-            <a className="back-button link" href="/">
-              <FontAwesomeIcon icon={faArrowLeft} className="back-button-chevron"/>
-              <p className="back-button-text">Go back to main website</p>
+            <a className="hide-mobile-flex back-button link" href="/">
+              <FontAwesomeIcon icon={faArrowLeft} className="fa-fw back-button-chevron"/>
+              <p className="back-button-text">Back to AUES site</p>
             </a>
 
             <div className="title-container">
@@ -114,8 +114,18 @@ class App extends Component {
             </div>
 
             <a href="/" className="hide-mobile quick-contact link">Call us: (707) 882-2131</a>
-            <a href="/" className="hide-desktop quick-contact link"><FontAwesomeIcon icon={faPhone} className="call-now-icon"/></a>
+            {/*<a href="/" className="hide-desktop quick-contact link"><FontAwesomeIcon icon={faPhone} className="fa-fw call-now-icon"/></a>*/}
 
+          </div>
+          <div className="hide-desktop-flex mobile-header-links">
+            <a className="back-button link" href="/">
+              <FontAwesomeIcon icon={faArrowLeft} className="fa-fw back-button-chevron"/>
+              <p className="mobile-header-button-text">Go Back</p>
+            </a>
+            <a href="/" className="quick-contact link">
+              <FontAwesomeIcon icon={faPhone} className="fa-fw call-now-icon"/>
+              <p className="mobile-header-button-text">Call Us</p>
+            </a>
           </div>
 
           <div className="activity-section">
