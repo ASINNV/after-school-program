@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { connect } from "react-redux";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faPhone, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 
 
 class MainSchedule extends Component {
@@ -101,6 +101,10 @@ class App extends Component {
 
         <div className="page-one">
 
+          <div className="hide-desktop divider-logo-container">
+            <FontAwesomeIcon icon={faGraduationCap} className="divider-logo"/>
+          </div>
+
           <div className="header">
 
             <a className="hide-mobile-flex back-button link" href="/">
@@ -117,6 +121,7 @@ class App extends Component {
             {/*<a href="/" className="hide-desktop quick-contact link"><FontAwesomeIcon icon={faPhone} className="fa-fw call-now-icon"/></a>*/}
 
           </div>
+
           <div className="hide-desktop-flex mobile-header-links">
             <a className="back-button link" href="/">
               <FontAwesomeIcon icon={faArrowLeft} className="fa-fw back-button-chevron"/>
@@ -130,7 +135,7 @@ class App extends Component {
 
           <div className="activity-section">
             <div className="blurb">
-              <h3 className="blurb-header">It's like school, but not!</h3>
+              <h3 className="blurb-header">It's like School, but Not!</h3>
               <p className="blurb-body">By attending our After School Program, your kid(s) will learn about completing assignments early while collaborating with peers during study time. Your child(ren) will also have the chance to participate in a host of engaging activities including computer class, yoga, art, music, sports, landscaping, gardening, and more!</p>
             </div>
             <div className="schedule">
