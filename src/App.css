@@ -132,6 +132,7 @@ tr:nth-child(2n +1) {
 .title {
   color: #339696;
   font-weight: 700;
+  hyphens: none;
 }
 .subtitle {
   color: #963333;
