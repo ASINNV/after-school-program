@@ -309,6 +309,7 @@ tr:nth-child(2n +1) {
   display: flex;
   flex-direction: column;
   width: 100%;
+  position: relative;
   padding: 20px;
   background: #808080;
   background: linear-gradient(#808080, #707070);
@@ -350,6 +351,13 @@ textarea.input-field {
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   transition: color .12s ease-in-out, box-shadow .12s ease-in-out;
+}
+#submit-response {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-weight: 700;
 }
 .contact-blurb-container {
   margin-left: 40%;

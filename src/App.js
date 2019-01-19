@@ -92,6 +92,54 @@ class App extends Component {
       clickedButton.className = clickedButton.className + ' toggle-active';
     }
   }
+  sendForm() {
+    let inputs = document.getElementsByClassName('input-field');
+    let submittedName= inputs[0].value;
+    let submittedEmail = inputs[1].value;
+    let submittedMessage = inputs[2].value;
+    for (let i = 0; i < inputs.length; i++) {
+      console.log(inputs[i].value);
+    }
+
+    if (submittedName.length > 0 && submittedEmail.length > 0 && submittedMessage.length > 0) {
+      let obJSON = {
+        "Messages": [
+          {
+            "From": {
+              "Email": "adrian@andmoore.xyz",
+              "Name": "Arena Union Elementary School"
+            },
+            "To": [
+              {
+                "Email": submittedEmail,
+                "Name": submittedName
+              }
+            ],
+            "Subject": "New After School Program Sign-Up!",
+            "TextPart": submittedName + " (" + submittedEmail + ") submitted the following: " + submittedMessage,
+            "HTMLPart": "<h4>Name:</h4><p>" + submittedName + "</p><br/><h4>Email:</h4><p>" + submittedEmail + "</p><br/><h4>Message:</h4><p>" + submittedMessage + "</p>"
+          }
+        ]
+      };
+      fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(obJSON)
+      })
+        .then(function(response) {
+          // return response.json();
+          console.log(response);
+          document.getElementById('submit-response').textContent = "You're all set!";
+          for (let i = 0; i < inputs.length; i++) {
+            inputs[i].value = '';
+          }
+        });
+    } else {
+      document.getElementById('submit-response').textContent = "Missed a spot!";
+    }
+  }
   render() {
     return (
       <div className="main">
@@ -177,6 +225,9 @@ class App extends Component {
                 <h3>Contact Us</h3>
               </div>
               <div className="contact-form-inputs">
+
+                <p id="submit-response"></p>
+
                 <div className="input-group">
                   <p className="input-label">Name</p>
                   <input type="text" className="input-field"/>
@@ -189,7 +240,7 @@ class App extends Component {
                   <p className="input-label">Message</p>
                   <textarea className="input-field" id=""></textarea>
                 </div>
-                <p className="submit-button">Submit</p>
+                <p className="submit-button" onClick={this.sendForm.bind(this)}>Submit</p>
 
               </div>
             </div>
