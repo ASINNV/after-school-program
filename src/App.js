@@ -107,12 +107,12 @@ class App extends Component {
           {
             "From": {
               "Email": "adrian@andmoore.xyz",
-              "Name": "Arena Union Elementary School"
+              "Name": "After School Program Web Contact Form"
             },
             "To": [
               {
                 "Email": "omgitsadrian@gmail.com",
-                "Name": "Program Administrator"
+                "Name": "Adrian Sinnott"
               }
             ],
             "Subject": "New After School Program Sign-Up!",
