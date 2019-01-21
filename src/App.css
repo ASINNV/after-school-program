@@ -263,7 +263,7 @@ tr:nth-child(2n +1) {
 .contact-section {
   position: relative;
   width: 1024px;
-  height: 510px;
+  height: 509px;
   background: #963333;
   color: #fff;
   margin: 0 auto;
@@ -405,7 +405,7 @@ textarea.input-field {
 /* SMALL MOBILE SCREENS */
 /* SMALL MOBILE SCREENS */
 
-@media screen and (min-width: 320px) and (max-width: 900px) {
+@media screen and (min-width: 320px) and (max-width: 1024px) {
   h1 {
     margin-top: 10px;
   }
@@ -577,6 +577,59 @@ textarea.input-field {
   }
   .mobile-header-button-text {
     margin-left: 10px;
+  }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1024px) {
+  .header {
+    width: 760px;
+    margin: 30px auto;
+  }
+  .title {
+    font-size: 3.3em;
+  }
+  .subtitle {
+    font-size: 2em;
+  }
+  .activity-section, .contact-section {
+    width: 760px;
+    margin: 0 auto;
+    padding: 15px 30px;
+  }
+  .mobile-header-links {
+    width: 760px;
+    margin: 0 auto 20px auto;
+    justify-content: space-around;
+  }
+  .back-button, .quick-contact {
+    justify-content: center;
+  }
+  .mobile-header-button-text {
+    margin-left: 10px;
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1199px) {
+  .activity-section {
+    height: 379px;
+    width: 990px;
+    padding: 30px;
+  }
+  .blurb-header, .schedule-header {
+    padding: 10px 0;
+  }
+  .blurb {
+    width: 533px;
+  }
+  .contact-section {
+    width: 990px;
+    height: 489px;
+  }
+  .contact-form-header, .contact-blurb-header {
+    padding: 10px 0;
+  }
+  .contact-blurb-container {
+    margin-left: 42%;
   }
 }
 
