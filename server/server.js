@@ -77,7 +77,6 @@ app.post("/api/send-email", function(req, res) {
     .request(requestBody)
     .then((result) => {
       res.send(result);
-      console.log(result);
     })
     .catch((err) => {
       res.send(err);

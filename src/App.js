@@ -97,9 +97,6 @@ class App extends Component {
     let submittedName= inputs[0].value;
     let submittedEmail = inputs[1].value;
     let submittedMessage = inputs[2].value;
-    for (let i = 0; i < inputs.length; i++) {
-      console.log(inputs[i].value);
-    }
 
     if (submittedName.length > 0 && submittedEmail.length > 0 && submittedMessage.length > 0) {
       let obJSON = {
@@ -130,7 +127,6 @@ class App extends Component {
       })
         .then(function(response) {
           // return response.json();
-          console.log(response);
           document.getElementById('submit-response').textContent = "You're all set!";
           for (let i = 0; i < inputs.length; i++) {
             inputs[i].value = '';
