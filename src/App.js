@@ -111,8 +111,8 @@ class App extends Component {
             },
             "To": [
               {
-                "Email": submittedEmail,
-                "Name": submittedName
+                "Email": "omgitsadrian@gmail.com",
+                "Name": "Program Administrator"
               }
             ],
             "Subject": "New After School Program Sign-Up!",

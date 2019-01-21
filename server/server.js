@@ -40,35 +40,35 @@ const mailjet = require ('node-mailjet')
 
 const port = process.env.PORT || 5000;
 
-const db_obj = {
-  host: 'localhost',
-  port: 5432,
-  database: 'ams',
-  user: 'dev',
-  password: process.env.PASSWORD
-};
-
-const db = pgp(db_obj);
+// const db_obj = {
+//   host: 'localhost',
+//   port: 5432,
+//   database: 'ams',
+//   user: 'dev',
+//   password: process.env.PASSWORD
+// };
+//
+// const db = pgp(db_obj);
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 
-function getGoals() {
-  return db.many('SELECT * FROM goals;');
-}
-
-app.get("/", (req, res, next) => {
-  getGoals()
-    .then(function(data) {
-      res.send(data);
-    })
-    .catch(function(err) {
-      console.log(err, 'err from GET DATA block in server.js code');
-      res.status(500).send('err from GET DATA block in server.js code');
-    })
-});
+// function getGoals() {
+//   return db.many('SELECT * FROM goals;');
+// }
+//
+// app.get("/", (req, res, next) => {
+//   getGoals()
+//     .then(function(data) {
+//       res.send(data);
+//     })
+//     .catch(function(err) {
+//       console.log(err, 'err from GET DATA block in server.js code');
+//       res.status(500).send('err from GET DATA block in server.js code');
+//     })
+// });
 
 app.post("/api/send-email", function(req, res) {
   let requestBody = req.body;
