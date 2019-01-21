@@ -162,7 +162,6 @@ tr:nth-child(2n +1) {
 }
 .blurb {
   width: 575px;
-  overflow: scroll;
   color: #fff;
 }
 .blurb-header {
@@ -505,7 +504,6 @@ textarea.input-field {
   }
   .blurb {
     width: auto;
-    overflow: auto;
   }
   .schedule-toggle {
     font-size: 1.1em;
